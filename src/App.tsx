@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./NavBar/navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Login from "./pages/login"
+import Login from "./pages/Login"
 import Journal from "./pages/Journal";
 import CreateJournal from "./pages/CreateJournal.tsx";
 import ContactUs from "./pages/ContactUs";
