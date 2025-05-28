@@ -1,62 +1,91 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.bg-dot-grid {
+  background-color: #0f0f0f; /* Deep black base */
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 0);
+  background-size: 16px 16px; /* dot spacing */
+  background-position: center;
+}
 
 @layer base {
   :root {
-    --background: 210 60% 98%; /* light blue-gray */
-    --foreground: 222 47% 11%; /* deep blue-gray */
-    --card: 210 60% 98%;
-    --card-foreground: 222 47% 11%;
-    --popover: 210 60% 98%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 200 94% 45%; /* soothing blue */
-    --primary-foreground: 210 60% 98%;
-    --secondary: 174 63% 80%; /* soft teal */
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 90%;
-    --muted-foreground: 222 20% 40%;
-    --accent: 174 63% 80%;
-    --accent-foreground: 222 47% 11%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 210 40% 85%;
-    --input: 210 40% 85%;
-    --ring: 200 94% 45%;
-    --chart-1: 200 94% 45%;
-    --chart-2: 174 63% 80%;
-    --chart-3: 222 47% 11%;
-    --chart-4: 210 60% 98%;
-    --chart-5: 210 40% 90%;
-    --radius: 0.5rem;
+    --background: 210 60% 98%;              /* Soft Blue-Gray Background */
+    --foreground: 222 47% 11%;              /* Deep Blue-Gray Text */
+
+    --card: 0 0% 100%;                      /* Pure White Card */
+    --card-foreground: 222 47% 11%;         /* Card Text - Deep Blue-Gray */
+
+    --popover: 210 60% 98%;                 /* Light Blue-Gray Popover */
+    --popover-foreground: 222 47% 11%;      /* Popover Text - Deep Blue-Gray */
+
+    --primary: 220 100% 60%;                /* Electric Blue - Primary buttons/links */
+    --primary-foreground: 0 0% 100%;        /* White text on primary bg */
+
+    --secondary: 280 100% 80%;              /* Soft Neon Purple - Secondary buttons */
+    --secondary-foreground: 0 0% 20%;       /* Very dark text on secondary bg */
+
+    --muted: 210 40% 90%;                   /* Muted Light Gray Background */
+    --muted-foreground: 222 20% 40%;        /* Muted Gray Text */
+
+    --accent: 175 100% 70%;                 /* Soft Neon Green - Highlights/Icons */
+    --accent-foreground: 0 0% 15%;          /* Very dark text on accent bg */
+
+    --destructive: 0 84% 60%;               /* Bright Red - Danger */
+    --destructive-foreground: 0 0% 100%;    /* White text on destructive bg */
+
+    --border: 210 40% 85%;                  /* Soft border color */
+    --input: 210 40% 85%;                   /* Input field background */
+    --ring: 220 100% 60%;                   /* Blue ring on focus */
+
+    --chart-1: 220 100% 60%;                /* Chart color 1 - Blue */
+    --chart-2: 280 100% 80%;                /* Chart color 2 - Purple */
+    --chart-3: 175 100% 70%;                /* Chart color 3 - Green */
+    --chart-4: 0 0% 20%;                    /* Chart color 4 - Very Dark Gray */
+    --chart-5: 210 60% 98%;                 /* Chart color 5 - Light Background */
+
+    --radius: 0.5rem;                       /* Radius remains the same */
   }
   .dark {
-    --background: 222 47% 11%; /* deep blue-gray */
-    --foreground: 210 60% 98%; /* light blue-gray */
-    --card: 222 47% 11%;
-    --card-foreground: 210 60% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 60% 98%;
-    --primary: 174 63% 80%; /* soft teal */
-    --primary-foreground: 222 47% 11%;
-    --secondary: 200 94% 45%; /* soothing blue */
-    --secondary-foreground: 210 60% 98%;
-    --muted: 222 47% 18%;
-    --muted-foreground: 210 60% 80%;
-    --accent: 200 94% 45%;
-    --accent-foreground: 210 60% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 222 47% 18%;
-    --input: 222 47% 18%;
-    --ring: 174 63% 80%;
-    --chart-1: 174 63% 80%;
-    --chart-2: 200 94% 45%;
-    --chart-3: 210 60% 98%;
-    --chart-4: 222 47% 11%;
-    --chart-5: 210 40% 90%;
+    --background: 0 0% 0%;                    /* Jet Black Background */
+    --foreground: 210 60% 98%;               /* Off-white Text */
+
+    --card: 0 0% 8%;                          /* Dark Gray Card Background */
+    --card-foreground: 210 60% 98%;          /* Card Text - Off-white */
+
+    --popover: 0 0% 10%;                     /* Slightly lighter than background */
+    --popover-foreground: 210 60% 98%;       /* Popover Text - Off-white */
+
+    --primary: 220 100% 60%;                 /* Electric Blue - Primary buttons/links */
+    --primary-foreground: 0 0% 0%;           /* Black text on primary bg */
+
+    --secondary: 280 100% 70%;               /* Neon Purple - Secondary elements */
+    --secondary-foreground: 0 0% 0%;         /* Black text on secondary bg */
+
+    --muted: 0 0% 15%;                       /* Dark Muted background - Inputs, borders */
+    --muted-foreground: 210 10% 65%;         /* Muted Text - Light Gray */
+
+    --accent: 175 100% 65%;                  /* Neon Green - Highlights/Icons */
+    --accent-foreground: 0 0% 0%;            /* Black text on accent bg */
+
+    --destructive: 0 84% 60%;                /* Bright Red - Danger buttons */
+    --destructive-foreground: 0 0% 100%;     /* White text on destructive bg */
+
+    --border: 0 0% 15%;                      /* Border color - Very dark gray */
+    --input: 0 0% 15%;                       /* Input background - same as border */
+    --ring: 220 100% 60%;                    /* Ring outline - Electric Blue */
+
+    --chart-1: 220 100% 60%;                 /* Chart color 1 - Electric Blue */
+    --chart-2: 280 100% 70%;                 /* Chart color 2 - Neon Purple */
+    --chart-3: 175 100% 65%;                 /* Chart color 3 - Neon Green */
+    --chart-4: 0 0% 100%;                    /* Chart color 4 - Pure White */
+    --chart-5: 0 0% 25%;                     /* Chart color 5 - Mid Gray */
+
+    --radius: 0.5rem;                        /* Component Radius - Keep as-is */
   }
 }
+
+
 
 @layer base {
   * {

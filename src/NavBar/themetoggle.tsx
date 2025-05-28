@@ -1,17 +1,17 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "../components/ui/button";
+import { Switch } from "../components/ui/switch";
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <Button
-      variant="ghost"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-    >
-      {theme === "light" ? <Moon /> : <Sun />}
-    </Button>
+    <Switch
+      checked={theme === "dark"}
+      onCheckedChange={() => setTheme(theme === "light" ? "dark" : "light")}
+      className="data-[state=checked]:bg-primary"
+      aria-label="Toggle theme"
+    />
   );
 };
 
