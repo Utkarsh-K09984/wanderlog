@@ -1,12 +1,9 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.bg-dot-grid {
-  background-color: #0f0f0f; /* Deep black base */
-  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 0);
-  background-size: 16px 16px; /* dot spacing */
-  background-position: center;
-}
+
 
 @layer base {
   :root {
@@ -83,6 +80,11 @@
 
     --radius: 0.5rem;                        /* Component Radius - Keep as-is */
   }
+
+  .font-handwritten {
+    /* font-family: 'Caveat';  */
+    font-family: "Gloria Hallelujah", cursive;
+  }
 }
 
 
@@ -95,3 +97,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* @layer utilities {
+  .bg-diary-lines {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 100% 4.375rem; 
+  }
+
+  .dark .bg-diary-lines {
+    background-image: linear-gradient(to bottom, rgba(250, 248, 248, 0.39) 1px, transparent 1px);
+  }
+
+  .line-match {
+    font-size: 1.75rem; 
+    line-height: 4.375rem; 
+  }
+} */

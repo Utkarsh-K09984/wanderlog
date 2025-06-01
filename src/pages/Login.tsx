@@ -34,12 +34,12 @@ function Login() {
         const result = await signInWithEmailAndPassword(auth, data.email, data.password);
         setUser(result.user);
         setGlobalUser(result.user); // update global auth state
-        alert("Login successful!");
+        // alert("Login successful!");
       } else {
         const result = await createUserWithEmailAndPassword(auth, data.email, data.password);
         setUser(result.user);
         setGlobalUser(result.user); // update global auth state
-        alert("Signup successful!");
+        // alert("Signup successful!");
       }
     } catch (error: any) {
       alert(error.message || "Authentication failed");
@@ -52,7 +52,7 @@ function Login() {
       const user = await signInWithGoogle();
       setUser(user);
       setGlobalUser(user); // update global auth state
-      alert("Google login successful!");
+      // alert("Google login successful!");
     } catch (error: any) {
       alert(error.message || "Google authentication failed");
       console.error(error);
@@ -64,7 +64,6 @@ function Login() {
       await logout();
       setUser(null);
       setGlobalUser(null); // clear global auth state
-      alert("Logged out successfully!");
     } catch (error: any) {
       alert(error.message || "Logout failed");
       console.error(error);
@@ -72,16 +71,17 @@ function Login() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-[80vh] gap-20">
-      <div className="w-full max-w-md h-full">
-        <div className="h-[100px] w-[100px] bg-gray-400 rounded-full">
-          <img src="" alt="login image" />
-        </div>
+    <div className="flex items-center justify-center min-h-[90vh] gap-20 mx-[2rem] ">
+      <div className="w-full max-w-md max-sm:hidden hover:scale-105 transition-transform duration-300 ">
+      
+          <img src="https://res.cloudinary.com/dbzbqq0vw/image/upload/v1748512745/Login-rafiki_fkng4x.svg" alt="login image" />
       </div>
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader>
           <CardTitle className="text-center text-2xl font-bold">
-            {isLogin ? "Login" : "Sign Up"}
+            {
+              globalUser? "" : isLogin ? "Login" : "Sign Up"
+            }
           </CardTitle>
         </CardHeader>
         <CardContent>

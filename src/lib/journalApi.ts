@@ -3,14 +3,16 @@ import { auth } from "./firebase";
 
 const db = getFirestore();
 
-export async function addJournal({ description, startDate, endDate, imageUrls }: { description: string; startDate: string; endDate: string; imageUrls?: string[] }) {
+export async function addJournal({ title, location, description, startDate, endDate, imageSections }: {title : string , location: string, description: string; startDate: string; endDate: string; imageSections?: { urls: string[]; description: string }[] }) {
   if (!auth.currentUser) throw new Error("Not authenticated");
   return await addDoc(collection(db, "journals"), {
+    title,
+    location,
     userId: auth.currentUser.uid,
     description,
     startDate: Timestamp.fromDate(new Date(startDate)),
     endDate: Timestamp.fromDate(new Date(endDate)),
-    imageUrls: imageUrls || [],
+    imageSections: imageSections || [],
     createdAt: Timestamp.now(),
   });
 }
