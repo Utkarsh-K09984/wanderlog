@@ -3,7 +3,7 @@ import { useAuthStore } from '../lib/authStore';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs";
 import CreateJournal from "./CreateJournal";
 import { getUserJournals } from "../lib/journalApi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Journal({ onJournalAdded }: { onJournalAdded?: () => void }) {
     const user = useAuthStore((state) => state.user);
@@ -113,12 +113,12 @@ function Journal({ onJournalAdded }: { onJournalAdded?: () => void }) {
                                 Sign in please !!
                             </h1>
                             <div className="flex flex-col sm:flex-row gap-4 mt-2 justify-center items-center max-md:w-full">
-                                <a
-                                    href="/login"
+                                <Link
+                                    to="/login"
                                     className="px-6 py-2 rounded-md bg-primary text-primary-foreground font-semibold shadow hover:bg-primary/90 transition"
                                 >
                                     Sign In
-                                </a>
+                                </Link>
                                 <a
                                     href="/about"
                                     className="px-6 py-2 rounded-md border border-border text-foreground font-semibold hover:bg-accent transition"
