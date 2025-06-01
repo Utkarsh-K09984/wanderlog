@@ -132,9 +132,7 @@ function Footer() {
         <div className="border-t border-border mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-              <span>© {currentYear} WanderLog. Made with</span>
-              <Heart className="w-4 h-4 text-red-500 fill-current" />
-              <span>for travelers worldwide.</span>
+              <span>© {currentYear} WanderLog. Made by Utkarsh Kapoor.</span>
             </div>
             
             <div className="flex items-center space-x-6 text-sm">
