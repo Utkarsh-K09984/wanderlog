@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ThemeToggle from "./themetoggle";
 import { useState } from "react";
-import { Menu, User2Icon, X } from "lucide-react";
+import { Menu, User2Icon, X ,  Mountain } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuthStore } from "../lib/authStore";
 
@@ -14,8 +14,8 @@ function Navbar() {
 
       {/* Left: Logo */}
       <div className="flex items-center flex-1">
-        <Link to="/" className="text-2xl font-bold whitespace-nowrap">
-          🌍 Travel Journal
+        <Link to="/" className="text-2xl font-bold whitespace-nowrap flex items-center">
+           <Mountain/> <p className="ml-2"> WanderLog </p>
         </Link>
       </div>
 
