@@ -6,11 +6,12 @@ import Login from "./pages/Login"
 import Journal from "./pages/Journal";
 import CreateJournal from "./pages/CreateJournal.tsx";
 import ContactUs from "./pages/ContactUs";
-import { FootballIcon } from "hugeicons-react";
+import AllDetails from "./pages/JournalDetails.tsx";
 import Footer from "./NavBar/footer.tsx";
 
 const App = () => {
   return (
+
     <BrowserRouter>
       <Navbar />
       <Routes>
@@ -25,9 +26,11 @@ const App = () => {
 
         {/* Catch All */}
         <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/journal/:id" element={<AllDetails  />} />
       </Routes>
       <Footer/>
     </BrowserRouter>
+
   );
 };
 
